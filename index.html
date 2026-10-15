@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Velvet Strand Salon</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="nav-container">
+        <a href="#home" class="logo">Velvet Strand</a>
+        <nav>
+          <a href="#home" class="nav-link">Home</a><a href="#services" class="nav-link">Services</a
+          ><a href="#stylists" class="nav-link">Stylists</a
+          ><a href="#book" class="nav-link">Book Now</a
+          ><a href="#dashboard" class="nav-link">Dashboard</a
+          ><a href="#admin" class="nav-link">Admin</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section id="home" class="page-section">
+        <div class="hero">
+          <div class="hero-content">
+            <h1>Artisanal Hair Care & Styling</h1>
+            <p>
+              Experience tailored haircuts, luxury coloring, and restorative treatments in a warm,
+              serene atmosphere.
+            </p>
+            <div class="hero-actions">
+              <a href="#book" class="btn btn-primary">Book Appointment</a
+              ><a href="#services" class="btn btn-secondary">Explore Services</a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <img
+              src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80"
+              alt="Salon Interior"
+            />
+          </div>
+        </div>
+        <div class="container section-pad">
+          <h2>Client Love</h2>
+          <div id="home-reviews-grid" class="reviews-grid"></div>
+        </div>
+      </section>
+      <section id="services" class="page-section">
+        <div class="container section-pad">
+          <h2>Our Menu & Pricing</h2>
+          <p class="section-sub">Thoughtfully curated services for every hair texture and style.</p>
+          <div class="filter-bar">
+            <button class="filter-btn active" data-category="all">All Services</button
+            ><button class="filter-btn" data-category="Haircut">Haircuts</button
+            ><button class="filter-btn" data-category="Coloring">Coloring</button
+            ><button class="filter-btn" data-category="Treatment">Treatments</button>
+          </div>
+          <div id="services-grid" class="services-grid"></div>
+        </div>
+      </section>
+      <section id="stylists" class="page-section">
+        <div class="container section-pad">
+          <h2>Meet Our Stylists</h2>
+          <p class="section-sub">
+            Masters of craft, dedicated to bringing out your signature look.
+          </p>
+          <div id="stylists-grid" class="stylists-grid"></div>
+        </div>
+      </section>
+      <section id="book" class="page-section">
+        <div class="container section-pad">
+          <h2>Book Your Appointment</h2>
+          <div class="booking-wizard">
+            <div class="wizard-steps">
+              <div class="step-indicator active" data-step="1">1. Service</div>
+              <div class="step-indicator" data-step="2">2. Stylist</div>
+              <div class="step-indicator" data-step="3">3. Date & Time</div>
+              <div class="step-indicator" data-step="4">4. Your Info</div>
+            </div>
+            <form id="booking-form">
+              <div class="wizard-step-content active" data-step="1">
+                <h3>Select a Service</h3>
+                <div id="booking-services-list" class="selectable-grid"></div>
+                <div class="wizard-nav">
+                  <button type="button" class="btn btn-primary next-step">Next: Stylist</button>
+                </div>
+              </div>
+              <div class="wizard-step-content" data-step="2">
+                <h3>Choose Your Stylist</h3>
+                <div id="booking-stylists-list" class="selectable-grid"></div>
+                <div class="wizard-nav">
+                  <button type="button" class="btn btn-secondary prev-step">Back</button
+                  ><button type="button" class="btn btn-primary next-step">
+                    Next: Date & Time
+                  </button>
+                </div>
+              </div>
+              <div class="wizard-step-content" data-step="3">
+                <h3>Select Date and Time</h3>
+                <div class="form-group">
+                  <label for="booking-date">Date</label
+                  ><input type="date" id="booking-date" required />
+                </div>
+                <div class="form-group">
+                  <label for="booking-time">Time Slot</label
+                  ><select id="booking-time" required>
+                    <option value="">Select a time</option>
+                    <option value="09:00 AM">09:00 AM</option>
+                    <option value="10:30 AM">10:30 AM</option>
+                    <option value="12:00 PM">12:00 PM</option>
+                    <option value="02:00 PM">02:00 PM</option>
+                    <option value="03:30 PM">03:30 PM</option>
+                    <option value="05:00 PM">05:00 PM</option>
+                  </select>
+                </div>
+                <div class="wizard-nav">
+                  <button type="button" class="btn btn-secondary prev-step">Back</button
+                  ><button type="button" class="btn btn-primary next-step">Next: Your Info</button>
+                </div>
+              </div>
+              <div class="wizard-step-content" data-step="4">
+                <h3>Your Contact Details</h3>
+                <div class="form-group">
+                  <label for="client-name">Full Name</label
+                  ><input type="text" id="client-name" placeholder="Jane Doe" required />
+                </div>
+                <div class="form-group">
+                  <label for="client-email">Email Address</label
+                  ><input type="email" id="client-email" placeholder="jane@example.com" required />
+                </div>
+                <div class="form-group">
+                  <label for="client-phone">Phone Number</label
+                  ><input type="tel" id="client-phone" placeholder="(555) 000-0000" required />
+                </div>
+                <div class="booking-summary-box" id="booking-summary"></div>
+                <div class="wizard-nav">
+                  <button type="button" class="btn btn-secondary prev-step">Back</button
+                  ><button type="submit" class="btn btn-primary">Confirm Booking</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section id="dashboard" class="page-section">
+        <div class="container section-pad">
+          <h2>Client Dashboard</h2>
+          <p class="section-sub">Manage your upcoming salon visits and review past appointments.</p>
+          <div class="form-group" style="max-width: 300px; margin-bottom: 2rem">
+            <label for="dashboard-email-filter">Look up by email:</label>
+            <div style="display: flex; gap: 0.5rem">
+              <input type="email" id="dashboard-email-filter" placeholder="your@email.com" /><button
+                type="button"
+                id="dashboard-search-btn"
+                class="btn btn-primary"
+              >
+                Search
+              </button>
+            </div>
+          </div>
+          <div id="dashboard-content"></div>
+        </div>
+      </section>
+      <section id="admin" class="page-section">
+        <div class="container section-pad">
+          <h2>Salon Manager Portal</h2>
+          <div id="admin-auth">
+            <div class="admin-login-box">
+              <p>
+                Enter manager passcode to access scheduling control (Hint:
+                <strong>admin123</strong>)
+              </p>
+              <div class="form-group">
+                <input type="password" id="admin-passcode" placeholder="Passcode" /><button
+                  type="button"
+                  id="admin-login-btn"
+                  class="btn btn-primary"
+                >
+                  Login
+                </button>
+              </div>
+              <p id="admin-error" class="error-msg"></p>
+            </div>
+          </div>
+          <div id="admin-panel" style="display: none">
+            <div class="admin-header">
+              <h3>All Salon Appointments</h3>
+              <button type="button" id="admin-logout-btn" class="btn btn-secondary">Logout</button>
+            </div>
+            <div id="admin-appointments-list"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container footer-content">
+        <p>&copy; 2025 Velvet Strand Salon. All rights reserved.</p>
+        <p>124 Terracotta Ave, Suite B &bull; Open Tue-Sat 9am - 7pm</p>
+      </div>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
